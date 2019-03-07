@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibraryUsers
 {
     [Serializable]
-    public struct Book
+    public class Book
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -14,7 +14,7 @@ namespace LibraryManagementSystem.Model
             Console.Clear();
             Console.WriteLine("Welcome to library management system!");
             int choice;
-            Console.WriteLine("1 - Registration\n2 - LogIn");
+            Console.WriteLine("1 - Registration\n2 - LogIn\n3 - LogIn as adminestrator");
             choice = Int32.Parse(Console.ReadLine());
             switch (choice)
             {
@@ -24,9 +24,9 @@ namespace LibraryManagementSystem.Model
                 case 2:
                         UserMenu(LogIn());
                     break;
-                //case 3:
-                //    LoginAdmin();
-                //    break;
+                case 3:
+                    AdminMenu(LoginAdmin());
+                    break;
                 default:
                     return;
             }
@@ -183,7 +183,7 @@ namespace LibraryManagementSystem.Model
                         Console.WriteLine("Choose from 1 to 5!");
                         Console.WriteLine("Press any key to continue...");
                         Console.ReadKey();
-                        break;
+                        return;
                 }
             }
         }
@@ -278,6 +278,11 @@ namespace LibraryManagementSystem.Model
                 Service.SerializeXml("Reports.xml", reports.ToArray());
             }
             return user;
+        }
+
+        public void AdminMenu(Administrator admin)
+        {
+            Console.WriteLine("1 - Show all books\n2 - Show");
         }
     }
 
